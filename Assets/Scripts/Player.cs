@@ -60,6 +60,7 @@ public class Player : MonoBehaviour
             Destroy (col.gameObject);
 
             Instantiate(particleEffect2, GameObject.FindGameObjectsWithTag("Player")[0].transform);
+            return;
         }
     }
 }

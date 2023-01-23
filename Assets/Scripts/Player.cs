@@ -55,12 +55,7 @@ public class Player : MonoBehaviour
 
             Destroy(col.gameObject);
 
-            Instantiate(GameObject.FindGameObjectsWithTag("Coin")[0]);
-
-            Destroy (col.gameObject);
-
-            Instantiate(particleEffect2, GameObject.FindGameObjectsWithTag("Player")[0].transform);
-            return;
+            Instantiate(particleEffect2, GameObject.FindGameObjectWithTag("Player").transform);
         }
     }
 }

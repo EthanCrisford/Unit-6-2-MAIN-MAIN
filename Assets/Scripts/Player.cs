@@ -45,6 +45,8 @@ public class Player : MonoBehaviour
         {
             sr.flipX = true;
         }
+
+        PlayBackgroundEffect();
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -54,8 +56,16 @@ public class Player : MonoBehaviour
             Instantiate(particleEffect1, transform.position, Quaternion.identity);
 
             Destroy(col.gameObject);
+        }
+    }
 
-            Instantiate(particleEffect2, GameObject.FindGameObjectWithTag("Player").transform);
+    void PlayBackgroundEffect()
+    {
+        bool pressed = Input.GetKeyDown("g");
+
+        if (pressed == true)
+        {
+            Instantiate(particleEffect2, GameObject.FindGameObjectWithTag("Platform").transform);
         }
     }
 }
